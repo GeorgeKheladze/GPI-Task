@@ -1,0 +1,10 @@
+<div class="flex justify-center items-center w-[95%] h-[38px] mt-[24px] mx-auto sm:max-w-[1208px]">
+  <div *ngFor="let path of paths; index as i" [routerLink]="i === paths.length - 1 ? null : path.page"  class="flex items-center overflow-hidden w-[18%]" [ngClass]="{'!w-auto': i === 0}">
+    <div *ngIf="i !== 0" class="bg-[#22A336] mx-[5px] w-[calc(100%-38px)] h-[1px]"></div>
+    <div [ngClass]="{'!bg-[#22A336]': i !== paths.length - 1}"  routerLinkActive="!bg-[#ED1C7C]" class="w-[28px] h-[28px] bg-[#E9E8EF] rounded-full flex justify-center items-center cursor-pointer">
+      <p class="text-[14px] text-white">{{ path.pageNum }}</p>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
